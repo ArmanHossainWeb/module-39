@@ -1,69 +1,56 @@
-import Counter from '../counter'
-import Batsman from './batsman'
-import './App.css'
-import Bowler from './Bowler'
-import Users from './user'
 import { Suspense } from 'react'
-import Friends from './friends'
+import './App.css'
+import Batsman from './components/batsman/Batsman'
+import Counter from './components/counter/Counter'
+import Users from './components/users/Users'
+import Photos from './components/photos/Photos'
+import Players from './components/players/Players'
+import Numbers from './components/numbers/numbers'
+import Text from './components/text/Text'
 
-const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
-.then(res => res.json())
+// const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users')
+// .then(res=> res.json())
 
-// const fetchFriends = async() =>{
-//   const res = await fetch("https://jsonplaceholder.typicode.com/users");
-//   return res.json();
-// }
+
+
+// const fetchPhotos = fetch("https://jsonplaceholder.typicode.com/photos")
+// .then(res => res.json())
+
 
 function App() {
 
-  // const friendPromise = fetchFriends();
-
-  
-  // function handelClick(){
-  //   alert("i am clicked")
-  // }
-  // const handelClick3 = ()=>{
-  //   alert("clicked 3")
-  // }
-  // const handelAdd5 = (num) => {
-  //   const newNum = num + 5;
-  //   alert(newNum)
+  // click funtion 
+  // function handelClick() {
+  //   console.log("hello");
   // }
 
   return (
     <>
       
       <h3>Vite + React</h3>
+      {/* <button onClick={handelClick()}>click me </button>
+      <button>click me </button> */}
+  {/* <Counter></Counter> */}
+  {/* <Batsman></Batsman> */}
 
 
-    {/* <Suspense fallback={<h3>Friends are coming for treat...</h3>}>
-    <Friends friendPromise={friendPromise}></Friends>
-    </Suspense> */}
-      
-      <Suspense fallback={<h3>loading...</h3>}>
-        <Users fetchUsers ={fetchUsers}></Users>
-      </Suspense>
+        {/* <Suspense fallback={<p>data loading.....</p>}>
+          <Users fetchUsers={fetchUsers}></Users>
+        </Suspense> */}
 
-       <Batsman></Batsman>
+          {/* <Suspense fallback={<p>photos loading</p>}>
+            <Photos fetchPhotos={fetchPhotos}></Photos>
+          </Suspense> */}
 
-
-
-      <Bowler></Bowler> 
+          {/* <Players></Players> */}
 
 
-      <Counter ></Counter>
+          {/* <Numbers></Numbers> */}
+
+            {/* <Text></Text> */}
 
 
-      {/* <button onClick={handelClick} >Click Me</button>
-      <button onClick={function handelClick2(){
-        alert("clicked 2")
-      }} >Click Me</button>
     
-      <button onClick={handelClick3} >Click Me</button>
-       
-      <button onClick={()=>alert("clicked 4")} >Click Me</button>
-
-      <button onClick={()=> handelAdd5(10)}>Click add 5</button> */}
     </>
   )
 }
